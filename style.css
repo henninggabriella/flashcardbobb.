@@ -1,0 +1,144 @@
+:root {
+    --text-color: #fcfbfb;
+    --card-front-color: #000000;
+    --card-back-color: #8a8b8b;
+}
+
+body {
+    background: url('https://i.pinimg.com/564x/fa/ad/25/faad25c76f6435bb9a2de6aebc72bceb.jpg');
+    font-family: 'Roboto Mono', monospace;
+}
+
+.header {
+    text-align: center;
+    background-color: var(--card-front-color);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10; /* Para garantir que o cabeçalho fique acima de outros elementos */
+}
+
+#container {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 4rem;
+    gap: 3rem;
+    margin-top: 5rem; /* Para dar espaço para o cabeçalho */
+}
+
+.cartao {
+    margin: 1rem 1rem;
+    height: 20rem;
+    flex-grow: 1;
+    flex-basis: calc(33% - 6rem);
+}
+
+.cartao__conteudo {
+    background-color: var(--card-front-color);
+    text-align: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 300ms ease-in-out;
+}
+
+.cartao__conteudo h3 {
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    text-align: left;
+    padding: 0.5rem;
+    position: absolute;
+    margin: 0.6rem;
+    border-radius: 0.6rem;
+    font-size: 1vw;
+    backface-visibility: hidden;
+}
+
+.cartao__conteudo p {
+    margin-top: 1rem;
+    padding: 2rem;
+    margin-top: 4rem;
+    font-size: 1.4vw;
+}
+
+.cartao__conteudo__pergunta p {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.cartao__conteudo__resposta p {
+    color: var(--card-back-color);
+    font-weight: 700;
+}
+
+.cartao.active .cartao__conteudo {
+    transform: rotateY(180deg);
+}
+
+.cartao__conteudo__pergunta,
+.cartao__conteudo__resposta {
+    backface-visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cartao__conteudo__resposta {
+    transform: rotateY(180deg);
+    background-color: rgba(0, 0, 0);
+    border: 4px solid var(--card-back-color);
+}
+
+footer {
+    background-color: black;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2rem;
+}
+
+footer p {
+    text-align: center;
+    font-size: 0.6rem;
+    margin-top: 0.8rem;
+}
+
+@media (max-width: 560px) {
+    body {
+        background: url('https://i.pinimg.com/236x/84/0a/cc/840accee5e30ae2db9b050727966b041.jpg'), no-repeat cover;
+    }
+
+    .cartao {
+        flex: 1 0 calc(100% - 1rem)
+    }
+
+    .cartao__conteudo h3 {
+        font-size: 3vw;
+    }
+
+    .cartao__conteudo p {
+        font-size: 3.8vw;
+    }
+}
+.header {
+    text-align: center;
+    background-color: var(--card-front-color);
+    padding: 0.5rem 0; /* Diminua o padding para reduzir a altura */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10; /* Para garantir que o cabeçalho fique acima de outros elementos */
+}
+
+.header h1 {
+    color: white; /* Altere para a cor desejada */
+    font-size: 1.5rem; /* Ajuste o tamanho da fonte se necessário */
+    margin: 0; /* Remove a margem padrão */
+}
+
+
+
+
